@@ -1,0 +1,12 @@
+Q1: What class should implement the Comparable interface?
+->A: Media
+
+Q2: In those classes, how should you implement the compareTo() method be to reflect the ordering that we want?
+->A: I will write method public int compareTo(Media media) and then return title or cost depend on my purpose
+
+Q3: Can we have two ordering rules of the item (by title then cost and by cost then title) if we use this Comparable interface approach?
+->A: No, the Comparable interface only allows for a single natural ordering for a given class
+
+Q4: Suppose the DVDs has a different ordering rule from the other media types, that is by title, then decreasing length, then cost. How would you modify your code to allow this?
+->A: I can use if/else to solve this problem. For example, the system displays all the medias in the alphabet sequence by title. In case they have the same title, the medias having the higher length will be displayed first, 
+after that we consider the cost later 
