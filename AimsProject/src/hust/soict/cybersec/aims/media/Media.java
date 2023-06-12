@@ -1,20 +1,29 @@
 package hust.soict.cybersec.aims.media;
 
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.Comparator;
 import java.util.List;
 
 
 public class Media {
+=======
+import java.util.List;
+
+public abstract class Media {
+>>>>>>> a4e90632fef1e432e309ab3c80ecca88b3b7b01d
 	private int id;
 	private String title;
 	private String category;
 	private float cost;
 	
+<<<<<<< HEAD
 	public static final Comparator<Media> COMPARE_BY_TITLE_COST = new MediaComparatorByTitleCost();
     public static final Comparator<Media> COMPARE_BY_COST_TITLE = new MediaComparatorByCostTitle();
 	
 	
+=======
+>>>>>>> a4e90632fef1e432e309ab3c80ecca88b3b7b01d
 
 	public int getId() {
 		return id;
@@ -49,6 +58,7 @@ public class Media {
 	}
 
 	public Media() {
+<<<<<<< HEAD
 	}
 	
 	@Override
@@ -68,3 +78,31 @@ public class Media {
 		
 }
 
+=======
+		// TODO Auto-generated constructor stub
+	}
+	
+	public boolean equals(Media media) {
+		return this.getTitle() == media.getTitle();
+	}
+	
+	public String toString() {
+		return "Title: " + this.title;
+	}
+
+	public static void main(String[] args) {
+		List<Media> mediae = new ArrayList<Media>();
+		
+
+		mediae.add(cd);
+		mediae.add(dvd);
+		mediae.add(book);
+		
+		for(Media m: mediae) {
+			System.out.println(m.toString());
+		}
+		
+	}
+
+}
+>>>>>>> a4e90632fef1e432e309ab3c80ecca88b3b7b01d
