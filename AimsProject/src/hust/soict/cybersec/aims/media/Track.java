@@ -31,6 +31,7 @@ public class Track implements Playable {
 	}
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@Override
     public boolean equals(Object obj) {
         if (obj instanceof Track) {  // check if obj is an instance of Track
@@ -47,10 +48,15 @@ public class Track implements Playable {
 	}
 	
 =======
+=======
+>>>>>>> a4e90632fef1e432e309ab3c80ecca88b3b7b01d
 	public boolean equals(Track track){
         return this.getTitle() == track.getTitle() & this.getLength() == track.getLength();
     }
 	
+<<<<<<< HEAD
+>>>>>>> a4e90632fef1e432e309ab3c80ecca88b3b7b01d
+=======
 >>>>>>> a4e90632fef1e432e309ab3c80ecca88b3b7b01d
 	
 	

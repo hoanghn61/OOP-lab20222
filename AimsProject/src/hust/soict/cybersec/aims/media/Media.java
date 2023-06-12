@@ -2,11 +2,17 @@ package hust.soict.cybersec.aims.media;
 
 import java.util.ArrayList;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import java.util.Comparator;
 import java.util.List;
 
 
 public class Media {
+=======
+import java.util.List;
+
+public abstract class Media {
+>>>>>>> a4e90632fef1e432e309ab3c80ecca88b3b7b01d
 =======
 import java.util.List;
 
@@ -18,10 +24,13 @@ public abstract class Media {
 	private float cost;
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
 	public static final Comparator<Media> COMPARE_BY_TITLE_COST = new MediaComparatorByTitleCost();
     public static final Comparator<Media> COMPARE_BY_COST_TITLE = new MediaComparatorByCostTitle();
 	
 	
+=======
+>>>>>>> a4e90632fef1e432e309ab3c80ecca88b3b7b01d
 =======
 >>>>>>> a4e90632fef1e432e309ab3c80ecca88b3b7b01d
 
@@ -59,6 +68,7 @@ public abstract class Media {
 
 	public Media() {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	}
 	
 	@Override
@@ -79,6 +89,8 @@ public abstract class Media {
 }
 
 =======
+=======
+>>>>>>> a4e90632fef1e432e309ab3c80ecca88b3b7b01d
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -105,4 +117,7 @@ public abstract class Media {
 	}
 
 }
+<<<<<<< HEAD
+>>>>>>> a4e90632fef1e432e309ab3c80ecca88b3b7b01d
+=======
 >>>>>>> a4e90632fef1e432e309ab3c80ecca88b3b7b01d
