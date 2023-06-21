@@ -22,6 +22,13 @@ public class Store {
                 }
             }return true;
 	}
+
+        public void displayStore(){
+        for (Media media:
+             itemsInStore) {
+            System.out.println(media.toString());
+        }
+    }
 	
 	public boolean removeMedia(Media media) {
 		for(Media mediaName:itemsInStore) {
@@ -42,6 +49,10 @@ public class Store {
         }
         return false;
         
+    }
+
+    public Media searchByTitle(String title) {
+        return null;
     }
 
 }

@@ -4,6 +4,7 @@ public class DigitalVideoDisc extends Disc implements Playable{
 	private String director;
 	private int length;
 	private static int nbDigitalVideoDiscs = 0;
+
 	
 	public String getDirector() {
 		return director;
@@ -49,13 +50,30 @@ public class DigitalVideoDisc extends Disc implements Playable{
 
 	    }
 
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 
-	@Override
-	public void play() {
-		System.out.println("");
-		
-	}
+    public static boolean isMatch(DigitalVideoDisc dvd, String title){
+        if (dvd.getTitle() == title){
+            return true;
+        }else return false;
+    }
+
+    public static boolean isMatch(DigitalVideoDisc dvd, int id){
+        if (dvd.getId() == id){
+            return true;
+        }else return false;
+    }
+
+    @Override
+    public void play() {
+        System.out.println("Playing DVD: " + this.getTitle() );
+        System.out.println("DVD length: " + this.getLength() );
+    }
+}
 
 	
 
-}
+

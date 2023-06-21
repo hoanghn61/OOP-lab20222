@@ -2,6 +2,12 @@ package hust.soict.cybersec.aims.cart;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import hust.soict.cybersec.aims.media.Book;
+import hust.soict.cybersec.aims.media.CompactDisc;
+import hust.soict.cybersec.aims.media.DigitalVideoDisc;
 import hust.soict.cybersec.aims.media.Media;
 
 public class Cart {
@@ -45,5 +51,62 @@ public class Cart {
 		return totalMediaCost;
 		
 	}
+
+      public void playMedia(Media media) {
+        if (media instanceof CompactDisc) {
+            ((CompactDisc) media).play();
+        }
+        if (media instanceof DigitalVideoDisc) {
+            ((DigitalVideoDisc) media).play();
+        }
+        if (media instanceof Book) {
+            System.out.println("Book cannot play");
+        }
+    }
+
+    public void displayCart(){
+        double total = totalCost();
+
+        System.out.println("***********************CART***********************");
+        System.out.println("Ordered Items:");
+        for (Media media:
+             itemsOrdered) {
+            int i=0;
+            System.out.println((++i) + ". " + media.toString());
+        }
+        System.out.printf("Total cost: %.2f $\n",total);
+        System.out.println("***************************************************");
+    }
+
+    public Media searchByTitle(String title) {
+        for(Media m : itemsOrdered) {
+            if (m.getTitle().toLowerCase().contains(title.toLowerCase())) {
+                return m;
+            }
+        }
+        return null;
+    }
+
+    public Media searchById(int id) {
+        for(Media m : itemsOrdered) {
+            if (m.getId() == id) {
+                return m;
+            }
+        }
+        return null;
+    }
+
+    public List<Media> getItemsOrdered() {
+        return itemsOrdered;
+    }
+
+    public void sortByTitleCost() {
+        Collections.sort(itemsOrdered, Media.COMPARE_BY_TITLE_COST);
+    }
+
+    public void sortByCostTitle() {
+        Collections.sort(itemsOrdered, Media.COMPARE_BY_COST_TITLE);
+    }
+
 	
 }
