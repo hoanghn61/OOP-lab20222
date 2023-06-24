@@ -1,5 +1,5 @@
 package hust.soict.cybersec.aims.media;
-
+import hust.soict.cybersec.aims.exeption.PlayerException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -68,12 +68,26 @@ public class CompactDisc extends Disc implements Playable{
 	}
 
 	@Override
-	public void play() {
-		for (Track trackName:tracks) {
-			trackName.play();
+	public void play() throws PlayerException {
+		if(this.getLength() > 0) {
+			java.util.Iterator iterator = tracks.iterator();
+			Track nexTrack;
+			while(iterator.hasNext()) {
+				nexTrack = (Track) iterator.next();
+				try {
+						nexTrack.play();
+				}catch(PlayerException e) {
+					throw e;
+				}
+			}
 		}
 		
 		
+	}
+
+	public Track[] getTracks() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

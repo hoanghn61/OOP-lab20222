@@ -1,19 +1,25 @@
 package hust.soict.cybersec.aims.cart;
 
 
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
+import hust.soict.cybersec.aims.exeption.PlayerException;
 import hust.soict.cybersec.aims.media.Book;
 import hust.soict.cybersec.aims.media.CompactDisc;
 import hust.soict.cybersec.aims.media.DigitalVideoDisc;
 import hust.soict.cybersec.aims.media.Media;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class Cart {
 	public static final int MAX_NUMBERS_ORDERED = 20;
-	private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+
 	
+    private ObservableList<Media> itemsOrdered = FXCollections.observableArrayList();
+
+    public ObservableList<Media> getItemsOrdered() {
+        return itemsOrdered;
+    }
 	public boolean addMedia(Media media) {
 		if (itemsOrdered.size() > 20){
             return false;
@@ -52,7 +58,7 @@ public class Cart {
 		
 	}
 
-      public void playMedia(Media media) {
+      public void playMedia(Media media) throws PlayerException {
         if (media instanceof CompactDisc) {
             ((CompactDisc) media).play();
         }
@@ -96,9 +102,6 @@ public class Cart {
         return null;
     }
 
-    public List<Media> getItemsOrdered() {
-        return itemsOrdered;
-    }
 
     public void sortByTitleCost() {
         Collections.sort(itemsOrdered, Media.COMPARE_BY_TITLE_COST);
@@ -106,6 +109,10 @@ public class Cart {
 
     public void sortByCostTitle() {
         Collections.sort(itemsOrdered, Media.COMPARE_BY_COST_TITLE);
+    }
+    
+    public void emptyCart() {
+        this.itemsOrdered.clear();
     }
 
 	

@@ -1,5 +1,12 @@
 package hust.soict.cybersec.aims.media;
 
+import hust.soict.cybersec.aims.exeption.PlayerException;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+import java.awt.FlowLayout;
+
+import javax.swing.JDialog;
 public class Track implements Playable {
 	
 	private String title;
@@ -24,10 +31,20 @@ public class Track implements Playable {
 		
 	}
 	@Override
-	public void play() {
-		System.out.println("DVD's title: " + this.getTitle());
-		System.out.println("DVD's length: " + this.getLength());
-		
+	public void play() throws PlayerException {
+        if(this.getLength() > 0){
+            System.out.println("Playing DVD: " + this.getTitle());
+            System.out.println("DVD length: " + this.getLength());
+            JFrame f = new JFrame();
+            f.setSize(400, 400);
+            JDialog d = new JDialog(f, "Playing disc...");
+            d.setLayout(new FlowLayout());
+            d.add(new JLabel("Playing DVD: " + this.getTitle()));
+            d.add(new JLabel("DVD length: " + this.getLength()));
+        }
+        else {
+            throw new PlayerException("ERROR: DVD length is non-positive!");
+        }
 	}
 	
 	@Override

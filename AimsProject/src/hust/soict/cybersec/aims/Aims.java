@@ -1,11 +1,13 @@
 package hust.soict.cybersec.aims;
 
 import hust.soict.cybersec.aims.cart.Cart;
+
 import hust.soict.cybersec.aims.media.Book;
 import hust.soict.cybersec.aims.media.CompactDisc;
 import hust.soict.cybersec.aims.media.DigitalVideoDisc;
 import hust.soict.cybersec.aims.media.Media;
 import hust.soict.cybersec.aims.media.Track;
+import hust.soict.cybersec.aims.exeption.PlayerException;
 import hust.soict.cybersec.aims.store.Store;
 
 import java.util.ArrayList;
@@ -63,7 +65,7 @@ public class Aims {
         System.out.println("Please choose a number: 0-1-2-3-4-5");
     }
 
-    public static void chooseMediaDetailsMenu(Media media) {
+    public static void chooseMediaDetailsMenu(Media media) throws PlayerException {
         while(true) {
             mediaDetailsMenu();
             int choose = sc.nextInt();
@@ -80,7 +82,7 @@ public class Aims {
         }
     }
 
-    public static void chooseStoreMenu() {
+    public static void chooseStoreMenu() throws PlayerException {
         while (true) {
             storeMenu();
             int choose = sc.nextInt();
@@ -133,7 +135,7 @@ public class Aims {
         }
     }
 
-    public static void chooseCartMenu() {
+    public static void chooseCartMenu() throws PlayerException {
         while (true) {
             cartMenu();
             int choose = sc.nextInt();
@@ -300,7 +302,7 @@ public class Aims {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws PlayerException {
         sc = new Scanner(System.in);
         while (true) {
             showMenu();

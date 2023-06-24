@@ -2,6 +2,7 @@ package hust.soict.cybersec.aims.store;
 
 import java.util.ArrayList;
 
+import hust.soict.cybersec.aims.media.DigitalVideoDisc;
 import hust.soict.cybersec.aims.media.Media;
 
 public class Store {
@@ -54,5 +55,16 @@ public class Store {
     public Media searchByTitle(String title) {
         return null;
     }
+
+    public void addMedia(Media ...media){
+        for (int i = 0; i < media.length; i++) {
+            addMedia(media[i]);
+        }
+        return;
+    }
+
+	public ArrayList<Media> getItemsInStore() {
+		return itemsInStore;
+	}
 
 }
