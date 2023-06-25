@@ -59,8 +59,7 @@ public class StoreScreen extends AddItemToStoreScreen{
 
     }
 
-    JPanel createHeader()
-    {
+    JPanel createHeader() {
         JPanel header = new JPanel();
         header.setLayout(new BoxLayout(header, BoxLayout.X_AXIS));
 
@@ -75,11 +74,13 @@ public class StoreScreen extends AddItemToStoreScreen{
         header.add(Box.createRigidArea(new Dimension(10, 10)));
         header.add(title);
         header.add(Box.createHorizontalGlue());
+        header.add(Box.createRigidArea(new Dimension(630, 10)));
         header.add(cart);
         header.add(Box.createRigidArea(new Dimension(10, 10)));
 
         return header;
     }
+
 
     JPanel createCenter()
     {
@@ -87,13 +88,14 @@ public class StoreScreen extends AddItemToStoreScreen{
         center.setLayout(new GridLayout(3, 3, 2, 2));
 
         ArrayList<Media> mediaInStore = store.getItemsInStore();
-        for (int i = 0; i < 9; i++) {
+        int size = mediaInStore.size();
+        for (int i = 0; i < Math.min(size, 9); i++) {
             MediaStore cell = new MediaStore(mediaInStore.get(i));
             center.add(cell);
         }
-
         return center;
     }
+
 
     public StoreScreen(Store store) {
     	this.store = store;
